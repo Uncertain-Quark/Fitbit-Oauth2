@@ -1,10 +1,9 @@
 access_token=$(<token.txt)
+date=$1
 
-date=2023-03-28
-
-curl -X GET "https://api.fitbit.com/1/user/-/activities/heart/date/$date/1d/1sec.json" \
+curl -X GET "https://api.fitbit.com/1/user/-/activities/heart/date/$date/1d/1min.json" \
 -H "accept: application/json" \
--H "authorization: Bearer $access_token"
+-H "authorization: Bearer $access_token" > $2
 
 
 
